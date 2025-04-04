@@ -1,0 +1,49 @@
+<view class="container">
+  <view class="qrcode-section">
+    <view class="qrcode-title">关注我们的官方公众号</view>
+    <view class="qrcode-box">
+      <view class="qrcode-placeholder">二维码</view>
+    </view>
+    <view class="wechat-id">
+      <text>公众号ID：PetPartner2025</text>
+      <view class="copy-btn" bindtap="copyWechatId">复制</view>
+    </view>
+  </view>
+  
+  <view class="articles-section">
+    <view class="section-title">精选内容</view>
+    
+    <view class="article-list">
+      <view class="article-item" wx:for="{{articles}}" wx:key="id" bindtap="viewArticle" data-id="{{item.id}}">
+        <view class="article-info">
+          <view class="article-title">{{item.title}}</view>
+          <view class="article-meta">
+            <text>{{item.date}}</text>
+            <text class="meta-divider">|</text>
+            <text>{{item.views}}阅读</text>
+          </view>
+        </view>
+        <view class="article-icon">📄</view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="benefits-section">
+    <view class="section-title">关注福利</view>
+    
+    <view class="benefits-list">
+      <view class="benefit-item">
+        <view class="benefit-icon">🎁</view>
+        <view class="benefit-text">新用户专享优惠券</view>
+      </view>
+      <view class="benefit-item">
+        <view class="benefit-icon">📱</view>
+        <view class="benefit-text">专属客服一对一服务</view>
+      </view>
+      <view class="benefit-item">
+        <view class="benefit-icon">📣</view>
+        <view class="benefit-text">最新活动优先通知</view>
+      </view>
+    </view>
+  </view>
+</view> 

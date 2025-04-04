@@ -1,0 +1,99 @@
+.container {
+  padding: 30rpx;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.header-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.header-subtitle {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.pet-list {
+  margin-bottom: 40rpx;
+}
+
+.pet-card {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 10rpx rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.pet-icon {
+  font-size: 80rpx;
+  margin-right: 30rpx;
+}
+
+.pet-info {
+  flex: 1;
+}
+
+.pet-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.pet-breed {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+.pet-desc {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.adoption-tag {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 24rpx;
+  padding: 6rpx 20rpx;
+  border-radius: 20rpx;
+}
+
+.adoption-notice {
+  background-color: #F5F5F5;
+  padding: 30rpx;
+  border-radius: 16rpx;
+  margin-bottom: 40rpx;
+}
+
+.notice-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.notice-item {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 15rpx;
+}
+
+.action-button {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 25rpx 0;
+  border-radius: 50rpx;
+  font-weight: bold;
+} 

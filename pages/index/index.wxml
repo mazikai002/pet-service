@@ -1,0 +1,93 @@
+<!--index.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <!-- 顶部横幅区域 -->
+    <view class="banner-section">
+      <view class="banner-gradient">
+        <view class="banner-content">
+          <view class="banner-title">宠物派</view>
+          <view class="banner-subtitle">专业的宠物照顾服务</view>
+        </view>
+      </view>
+      
+      <!-- 悬浮的服务卡片 -->
+      <view class="service-cards">
+        <view class="service-card cat-card" bindtap="navigateToDetail" data-id="1">
+          <view class="card-icon">🐱</view>
+          <view class="card-content">
+            <view class="card-title">上门喂猫</view>
+            <view class="card-price">¥70/次起</view>
+          </view>
+          <view class="card-tag">预订</view>
+        </view>
+        
+        <view class="service-card dog-card" bindtap="navigateToDetail" data-id="2">
+          <view class="card-icon">🐶</view>
+          <view class="card-content">
+            <view class="card-title">上门遛狗</view>
+            <view class="card-price">¥80/次起</view>
+          </view>
+          <view class="card-tag">预订</view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 服务统计 -->
+    <view class="stats-section">
+      <view class="stats-icon">🏆</view>
+      <view class="stats-content">
+        <view class="stats-label">已累计服务宠物</view>
+        <view class="stats-count">30,677</view>
+        <view class="stats-date">截止2025.03</view>
+      </view>
+    </view>
+    
+    <!-- 功能区 -->
+    <view class="features-section">
+      <view class="section-title">我们的服务</view>
+      
+      <view class="features-grid">
+        <view class="feature-item" bindtap="followOfficialAccount">
+          <view class="feature-icon follow-icon">📱</view>
+          <view class="feature-text">关注公众号</view>
+          <view class="feature-desc">获取最新活动</view>
+        </view>
+        
+        <view class="feature-item" bindtap="goToWallet">
+          <view class="feature-icon wallet-icon">💰</view>
+          <view class="feature-text">储值优惠</view>
+          <view class="feature-desc">最高赠¥500</view>
+        </view>
+        
+        <view class="feature-item" bindtap="goToPetAdoption">
+          <view class="feature-icon adopt-icon">🏠</view>
+          <view class="feature-text">宠物领养</view>
+          <view class="feature-desc">寻找新家</view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 客户评价 -->
+    <view class="testimonials-section">
+      <view class="section-title">客户评价</view>
+      
+      <view class="testimonial-card">
+        <view class="testimonial-stars">⭐⭐⭐⭐⭐</view>
+        <view class="testimonial-text">"特别认真负责，全程录像，流程清晰，能够让人安心。"</view>
+        <view class="testimonial-author">— H.S.</view>
+      </view>
+      
+      <view class="testimonial-card">
+        <view class="testimonial-stars">⭐⭐⭐⭐⭐</view>
+        <view class="testimonial-text">"很专业负责，很多细节要求也都满足，感谢！"</view>
+        <view class="testimonial-author">— 黑猫警长</view>
+      </view>
+    </view>
+    
+    <!-- 底部呼叫行动 -->
+    <view class="cta-section">
+      <view class="cta-text">立即体验专业宠物照顾服务</view>
+      <view class="cta-button" bindtap="bookService">预订服务</view>
+    </view>
+  </view>
+</scroll-view>

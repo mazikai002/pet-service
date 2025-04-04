@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="tab-bar">
+    <view class="tab {{activeTab === 'all' ? 'active' : ''}}" bindtap="switchTab" data-tab="all">全部订单</view>
+    <view class="tab {{activeTab === 'ongoing' ? 'active' : ''}}" bindtap="switchTab" data-tab="ongoing">服务中</view>
+    <view class="tab {{activeTab === 'completed' ? 'active' : ''}}" bindtap="switchTab" data-tab="completed">已完成</view>
+    <view class="tab {{activeTab === 'cancelled' ? 'active' : ''}}" bindtap="switchTab" data-tab="cancelled">取消/退款</view>
+  </view>
+  
+  <!-- 空订单状态 -->
+  <view class="empty-state">
+    <image class="empty-image" src="/images/empty_order.png" mode="aspectFit"></image>
+    <view class="empty-text">喵~暂时还没有订单</view>
+  </view>
+  
+  <!-- 创建订单按钮 -->
+  <view class="create-order-btn" bindtap="createNewOrder">预订宠物服务</view>
+</view> 

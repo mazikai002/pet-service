@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/petCareDetail/petCareDetail",
+    "pages/myOrders/myOrders",
+    "pages/profile/profile",
+    "pages/wallet/wallet",
+    "pages/adoption/adoption",
+    "pages/follow/follow",
+    "pages/booking/booking"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFEB3B",
+    "navigationBarTitleText": "宠物派",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": false,
+    "color": "#999999",
+    "selectedColor": "#FFCC00",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/myOrders/myOrders",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {}
+}

@@ -1,0 +1,28 @@
+.container {
+  padding: 30rpx;
+}
+
+.qrcode-section {
+  background-color: white;
+  border-radius: 16rpx;
+  padding: 40rpx;
+  text-align: center;
+  margin-bottom: 40rpx;
+  box-shadow: 0 4rpx 10rpx rgba(0,0,0,0.1);
+}
+
+.qrcode-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+}
+
+.qrcode-box {
+  width: 300rpx;
+  height: 300rpx;
+  margin: 0 auto 30rpx;
+  background-color: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 

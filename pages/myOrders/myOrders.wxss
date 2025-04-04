@@ -1,0 +1,6 @@
+/* pages/myOrders/myOrders.wxss */
+.empty-icon {
+  font-size: 80rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
+}

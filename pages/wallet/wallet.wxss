@@ -1,0 +1,71 @@
+.container {
+  padding: 30rpx;
+}
+
+.wallet-header {
+  background: linear-gradient(135deg, #FF9800 0%, #FF5722 100%);
+  padding: 60rpx 30rpx;
+  border-radius: 20rpx;
+  text-align: center;
+  color: white;
+  margin-bottom: 40rpx;
+}
+
+.wallet-title {
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.wallet-balance {
+  font-size: 60rpx;
+  font-weight: bold;
+}
+
+.section-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+}
+
+.options-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.option-card {
+  width: 45%;
+  background-color: white;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  text-align: center;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 10rpx rgba(0,0,0,0.1);
+  border: 2rpx solid transparent;
+}
+
+.option-card.selected {
+  border-color: #FF5722;
+  background-color: #FFF5F5;
+}
+
+.option-amount {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.option-bonus {
+  font-size: 28rpx;
+  color: #FF5722;
+}
+
+.action-button {
+  background-color: #FF5722;
+  color: white;
+  text-align: center;
+  padding: 25rpx 0;
+  border-radius: 50rpx;
+  font-weight: bold;
+  margin-top: 30rpx;
+} 

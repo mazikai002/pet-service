@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="booking-header">
+    <view class="service-name">{{serviceTitle}}服务预订</view>
+  </view>
+  
+  <view class="form-section">
+    <view class="form-item">
+      <view class="form-label">服务日期</view>
+    </view>
+  </view>
+</view> 

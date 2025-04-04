@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="wallet-header">
+    <view class="wallet-title">我的储值</view>
+    <view class="wallet-balance">¥ {{walletBalance}}</view>
+  </view>
+  
+  <view class="bonus-options">
+    <view class="section-title">储值优惠</view>
+    
+    <view class="options-grid">
+      <view class="option-card {{selectedOption === index ? 'selected' : ''}}" 
+            wx:for="{{bonusOptions}}" 
+            wx:key="amount"
+            bindtap="selectOption"
+            data-index="{{index}}">
+        <view class="option-amount">¥{{item.amount}}</view>
+        <view class="option-bonus">赠¥{{item.bonus}}</view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="action-button" bindtap="topUp">确认充值</view>
+</view> 

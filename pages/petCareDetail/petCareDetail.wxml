@@ -1,0 +1,243 @@
+<view class="container">
+  <!-- 顶部信息区 -->
+  <view class="header-section">
+    <view class="service-bg {{serviceInfo.id === 1 ? 'cat-bg' : 'dog-bg'}}">
+      <view class="service-emoji">{{serviceInfo.id === 1 ? '🐱' : '🐶'}}</view>
+    </view>
+    
+    <view class="service-info-card">
+      <view class="service-title">{{serviceInfo.title}}</view>
+      <view class="service-rating">
+        <text class="rating-stars">⭐⭐⭐⭐⭐</text>
+        <text class="rating-count">5.0 (156)</text>
+      </view>
+      
+      <view class="price-section">
+        <view class="price">
+          <text class="price-symbol">¥</text>
+          <text class="price-value">{{serviceInfo.price}}</text>
+          <text class="price-unit">/次起</text>
+        </view>
+        <view class="share-btn" bindtap="shareService">
+          <text class="share-icon">📢</text>
+          <text class="share-text">分享</text>
+        </view>
+      </view>
+      
+      <view class="feature-tags">
+        <view class="feature-tag" wx:for="{{serviceInfo.features}}" wx:key="index">
+          <text class="tag-icon">✓</text>
+          <text class="tag-text">{{item}}</text>
+        </view>
+      </view>
+      
+      <view class="bonus-section">
+        <view class="bonus-tag">优惠</view>
+        <view class="bonus-text">储值最高赠¥500</view>
+        <view class="wallet-btn" bindtap="goToWallet">去储值</view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 标签页导航 -->
+  <view class="tab-nav">
+    <view class="tab-item {{activeTab === 'intro' ? 'active' : ''}}" 
+          bindtap="switchTab" data-tab="intro">
+      服务介绍
+      <view class="tab-line" wx:if="{{activeTab === 'intro'}}"></view>
+    </view>
+    <view class="tab-item {{activeTab === 'diary' ? 'active' : ''}}" 
+          bindtap="switchTab" data-tab="diary">
+      伴宠日记
+      <view class="tab-line" wx:if="{{activeTab === 'diary'}}"></view>
+    </view>
+    <view class="tab-item {{activeTab === 'reviews' ? 'active' : ''}}" 
+          bindtap="switchTab" data-tab="reviews">
+      服务评价
+      <view class="tab-line" wx:if="{{activeTab === 'reviews'}}"></view>
+    </view>
+  </view>
+  
+  <!-- 标签页内容 -->
+  <view class="tab-content">
+    <!-- 服务介绍内容 -->
+    <block wx:if="{{activeTab === 'intro'}}">
+      <view class="intro-section">
+        <view class="section-title">
+          <text class="title-icon">📋</text>
+          <text>服务描述</text>
+        </view>
+        <view class="description">{{serviceInfo.description}}</view>
+        
+        <view class="section-title">
+          <text class="title-icon">⏱️</text>
+          <text>服务流程</text>
+        </view>
+        <view class="flow-steps">
+          <view class="flow-step">
+            <view class="step-number">1</view>
+            <view class="step-content">
+              <view class="step-title">预约安排</view>
+              <view class="step-desc">预订后平台5分钟-2小时内分配伴宠专员</view>
+            </view>
+          </view>
+          
+          <view class="flow-step">
+            <view class="step-number">2</view>
+            <view class="step-content">
+              <view class="step-title">沟通需求</view>
+              <view class="step-desc">客服建立服务群，沟通服务需求/细节</view>
+            </view>
+          </view>
+          
+          <view class="flow-step">
+            <view class="step-number">3</view>
+            <view class="step-content">
+              <view class="step-title">上门服务</view>
+              <view class="step-desc">专业人员按约定时间上门提供服务</view>
+            </view>
+          </view>
+          
+          <view class="flow-step">
+            <view class="step-number">4</view>
+            <view class="step-content">
+              <view class="step-title">服务反馈</view>
+              <view class="step-desc">服务完成后提供照片/视频等记录</view>
+            </view>
+          </view>
+        </view>
+        
+        <view class="section-title">
+          <text class="title-icon">🔍</text>
+          <text>服务承诺</text>
+        </view>
+        <view class="service-promises">
+          <view class="promise-item">
+            <view class="promise-icon">📹</view>
+            <view class="promise-content">
+              <view class="promise-title">全程录像</view>
+              <view class="promise-desc">服务过程全程录像，让您安心看到每一刻</view>
+            </view>
+          </view>
+          
+          <view class="promise-item">
+            <view class="promise-icon">👨‍💼</view>
+            <view class="promise-content">
+              <view class="promise-title">专业团队</view>
+              <view class="promise-desc">经过专业培训的宠物照顾师，熟悉宠物行为</view>
+            </view>
+          </view>
+          
+          <view class="promise-item">
+            <view class="promise-icon">💰</view>
+            <view class="promise-content">
+              <view class="promise-title">不满意退款</view>
+              <view class="promise-desc">服务不满意可申请退款，无忧消费</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    
+    <!-- 伴宠日记内容 -->
+    <block wx:elif="{{activeTab === 'diary'}}">
+      <view class="diary-section">
+        <view class="diary-item">
+          <view class="diary-header">
+            <view class="pet-avatar">🐶</view>
+            <view class="pet-info">
+              <view class="pet-name">肉肉小宝贝</view>
+              <view class="diary-date">2025-02-07 · 苏州市</view>
+            </view>
+          </view>
+          <view class="diary-content">
+            经过几天的相处，已经开始迎接我的到来啦。喵喵喵...
+          </view>
+          <view class="diary-footer">
+            <view class="author">芮绮</view>
+            <view class="like-btn">❤️ 喜欢</view>
+          </view>
+        </view>
+        
+        <view class="diary-item">
+          <view class="diary-header">
+            <view class="pet-avatar">🐱</view>
+            <view class="pet-info">
+              <view class="pet-name">NANA小公主</view>
+              <view class="diary-date">2025-02-04 · 深圳市</view>
+            </view>
+          </view>
+          <view class="diary-content">
+            记录幸福时刻，今天NANA很开心地玩了逗猫棒，看起来精神状态非常好！
+          </view>
+          <view class="diary-footer">
+            <view class="author">爱喝咖啡的豆豆</view>
+            <view class="like-btn">❤️ 喜欢</view>
+          </view>
+        </view>
+      </view>
+    </block>
+    
+    <!-- 服务评价内容 -->
+    <block wx:elif="{{activeTab === 'reviews'}}">
+      <view class="reviews-section">
+        <view class="review-summary">
+          <view class="rating-big">5.0</view>
+          <view class="rating-stars-big">⭐⭐⭐⭐⭐</view>
+          <view class="rating-count">156条评价</view>
+        </view>
+        
+        <view class="review-item">
+          <view class="reviewer-info">
+            <view class="reviewer-avatar">👤</view>
+            <view class="reviewer-details">
+              <view class="reviewer-name">H.S.</view>
+              <view class="review-date">2025-03-27</view>
+            </view>
+            <view class="review-stars">⭐⭐⭐⭐⭐</view>
+          </view>
+          <view class="review-text">
+            特别认真负责，全程录像，流程清晰，能够让人安心。
+          </view>
+        </view>
+        
+        <view class="review-item">
+          <view class="reviewer-info">
+            <view class="reviewer-avatar">👤</view>
+            <view class="reviewer-details">
+              <view class="reviewer-name">黑猫警长</view>
+              <view class="review-date">2025-03-19</view>
+            </view>
+            <view class="review-stars">⭐⭐⭐⭐⭐</view>
+          </view>
+          <view class="review-text">
+            很专业负责，很多细节要求也都满足，感谢！每次回家都能看到猫咪很开心的样子。
+          </view>
+        </view>
+        
+        <view class="review-item">
+          <view class="reviewer-info">
+            <view class="reviewer-avatar">👤</view>
+            <view class="reviewer-details">
+              <view class="reviewer-name">Zelu</view>
+              <view class="review-date">2025-03-19</view>
+            </view>
+            <view class="review-stars">⭐⭐⭐⭐⭐</view>
+          </view>
+          <view class="review-text">
+            小姐姐特别有爱心，对狗狗很细心，家里提供电了她还帮忙回家检查。人真的好好，赞赞赞，宠物陪伴就需要这种有爱心的天使小姐姐。
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  
+  <!-- 底部操作栏 -->
+  <view class="footer">
+    <view class="cs-btn" bindtap="contactCustomerService">
+      <view class="cs-icon">💬</view>
+      <view class="cs-text">客服</view>
+    </view>
+    <view class="book-btn" bindtap="bookNow">立即预订</view>
+  </view>
+</view> 

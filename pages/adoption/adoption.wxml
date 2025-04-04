@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="page-header">
+    <view class="header-title">宠物领养</view>
+    <view class="header-subtitle">给它们一个温暖的家</view>
+  </view>
+  
+  <view class="pet-list">
+    <view class="pet-card" wx:for="{{pets}}" wx:key="id" bindtap="viewPetDetail" data-id="{{item.id}}">
+      <view class="pet-icon">{{item.type === '猫咪' ? '🐱' : '🐶'}}</view>
+      <view class="pet-info">
+        <view class="pet-name">{{item.name}}</view>
+        <view class="pet-breed">{{item.breed}} · {{item.age}}</view>
+        <view class="pet-desc">{{item.description}}</view>
+      </view>
+      <view class="adoption-tag">待领养</view>
+    </view>
+  </view>
+  
+  <view class="adoption-notice">
+    <view class="notice-title">领养须知</view>
+    <view class="notice-item">• 年满18周岁，有稳定的工作和住所</view>
+    <view class="notice-item">• 家庭成员同意养宠物，无成员过敏</view>
+    <view class="notice-item">• 愿意签署领养协议，定期反馈宠物状况</view>
+    <view class="notice-item">• 承诺负责终生，不遗弃，不转送</view>
+  </view>
+  
+  <view class="action-button" bindtap="applyAdoption">申请领养</view>
+</view> 
