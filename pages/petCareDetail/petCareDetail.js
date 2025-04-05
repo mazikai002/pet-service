@@ -1,12 +1,29 @@
 Page({
   data: {
     serviceInfo: {},
-    activeTab: 'intro' // 'intro', 'diary', 'reviews'
+    activeTab: 'intro', // 'intro', 'diary', 'reviews'
+    id: null,
+    title: ''
   },
   
   onLoad: function(options) {
-    const serviceId = Number(options.id);
-    const serviceInfo = this.getServiceInfo(serviceId);
+    console.log('服务详情页接收参数:', options);
+    
+    // 获取页面参数
+    const id = Number(options.id) || 1;
+    const title = options.title || (id === 1 ? '上门喂猫' : '上门遛狗');
+    
+    this.setData({
+      id,
+      title
+    });
+    
+    // 设置导航栏标题
+    wx.setNavigationBarTitle({
+      title: title + '服务'
+    });
+    
+    const serviceInfo = this.getServiceInfo(id);
     
     this.setData({
       serviceInfo
@@ -41,24 +58,24 @@ Page({
     });
   },
   
+  // 预订服务
   bookNow() {
     wx.showModal({
       title: '确认预订',
-      content: `您确定要预订${this.data.serviceInfo.title}服务吗？`,
+      content: `您确定要预订${this.data.title}服务吗？`,
       success: (res) => {
         if (res.confirm) {
+          // 显示预订成功提示
           wx.showToast({
             title: '预订成功',
             icon: 'success',
-            duration: 2000,
-            success: () => {
-              setTimeout(() => {
-                wx.switchTab({
-                  url: '/pages/myOrders/myOrders'
-                });
-              }, 2000);
-            }
+            duration: 2000
           });
+          
+          // 2秒后返回首页
+          setTimeout(() => {
+            wx.navigateBack();
+          }, 2000);
         }
       }
     });

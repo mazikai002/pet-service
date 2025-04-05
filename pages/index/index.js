@@ -113,5 +113,66 @@ Page({
   // 页面加载
   onLoad() {
     console.log('首页加载成功');
+    // 显示导航条加载动画
+    wx.showNavigationBarLoading();
+    
+    // 模拟数据加载
+    setTimeout(() => {
+      wx.hideNavigationBarLoading();
+    }, 500);
+  },
+  
+  // 跳转到喂猫服务详情
+  goCatService() {
+    console.log('点击了喂猫服务');
+    wx.navigateTo({
+      url: '/pages/petCareDetail/petCareDetail?id=1&title=上门喂猫',
+      fail: (err) => {
+        console.error('跳转失败:', err);
+        wx.showToast({
+          title: '跳转失败，请重试',
+          icon: 'none'
+        });
+      }
+    });
+  },
+  
+  // 跳转到遛狗服务详情
+  goDogService() {
+    console.log('点击了遛狗服务');
+    wx.navigateTo({
+      url: '/pages/petCareDetail/petCareDetail?id=2&title=上门遛狗',
+      fail: (err) => {
+        console.error('跳转失败:', err);
+        wx.showToast({
+          title: '跳转失败，请重试',
+          icon: 'none'
+        });
+      }
+    });
+  },
+  
+  // 跳转到关注公众号页面
+  goFollow() {
+    wx.showToast({
+      title: '公众号功能开发中',
+      icon: 'none'
+    });
+  },
+  
+  // 跳转到储值页面
+  goWallet() {
+    wx.showToast({
+      title: '储值功能开发中',
+      icon: 'none'
+    });
+  },
+  
+  // 跳转到宠物领养页面
+  goAdoption() {
+    wx.showToast({
+      title: '领养功能开发中',
+      icon: 'none'
+    });
   }
 })

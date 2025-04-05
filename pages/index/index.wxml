@@ -1,6 +1,11 @@
 <!--index.wxml-->
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
+    <view class="header">
+      <view class="title">宠物派</view>
+      <view class="subtitle">专业的宠物照顾服务</view>
+    </view>
+    
     <!-- 顶部横幅区域 -->
     <view class="banner-section">
       <view class="banner-gradient">
@@ -12,18 +17,18 @@
       
       <!-- 悬浮的服务卡片 -->
       <view class="service-cards">
-        <view class="service-card cat-card" bindtap="navigateToDetail" data-id="1">
+        <view class="service-card" bindtap="goCatService">
           <view class="card-icon">🐱</view>
-          <view class="card-content">
+          <view class="card-info">
             <view class="card-title">上门喂猫</view>
             <view class="card-price">¥70/次起</view>
           </view>
           <view class="card-tag">预订</view>
         </view>
         
-        <view class="service-card dog-card" bindtap="navigateToDetail" data-id="2">
+        <view class="service-card" bindtap="goDogService">
           <view class="card-icon">🐶</view>
-          <view class="card-content">
+          <view class="card-info">
             <view class="card-title">上门遛狗</view>
             <view class="card-price">¥80/次起</view>
           </view>
